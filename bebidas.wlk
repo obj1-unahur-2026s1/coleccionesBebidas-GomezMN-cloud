@@ -32,7 +32,7 @@ object coctel {
   const recipiente = []
 
   method agregarIngrediente(ingrediente) = recipiente.add(ingrediente)
-  method rendimientoQueOtorga(dosisConsumida) = recipiente.fold(1, {acum, item => acum * item.rendimientoQueOtorga(dosisConsumida * self.cantidadDeIngredientes())})
+  method rendimientoQueOtorga(dosisConsumida) = recipiente.fold(1, {acum, item => acum * item.rendimientoQueOtorga(dosisConsumida / self.cantidadDeIngredientes())})
   method cantidadDeIngredientes() {
     return recipiente.size()
   }
